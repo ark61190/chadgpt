@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHADGPT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: black;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      background-image:
+        radial-gradient(circle at top left, rgba(168,85,247,0.25), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(250,204,21,0.15), transparent 30%);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: purple;
+      filter: blur(180px);
+      opacity: 0.2;
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .hero {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero img {
+      width: 220px;
+      border-radius: 50%;
+      border: 5px solid #a855f7;
+      box-shadow: 0 0 50px rgba(168,85,247,0.6);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 5rem;
+      margin-top: 30px;
+      font-weight: 900;
+      background: linear-gradient(90deg, #facc15, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .tagline {
+      margin-top: 20px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #c084fc;
+    }
+
+    .description {
+      margin: 30px auto;
+      max-width: 800px;
+      font-size: 1.2rem;
+      color: #d1d5db;
+      line-height: 1.8;
+    }
+
+    .buttons {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 18px 34px;
+      border-radius: 18px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background: #a855f7;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+      background: #9333ea;
+    }
+
+    .btn-secondary {
+      background: #facc15;
+      color: black;
+    }
+
+    .btn-secondary:hover {
+      transform: scale(1.05);
+      background: #fde047;
+    }
+
+    section {
+      padding: 100px 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(168,85,247,0.4);
+      border-radius: 24px;
+      padding: 35px;
+      backdrop-filter: blur(12px);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      border-color: #facc15;
+    }
+
+    .card h2 {
+      color: #facc15;
+      margin-bottom: 18px;
+      font-size: 1.8rem;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .card p {
+      color: #d1d5db;
+      line-height: 1.7;
+    }
+
+    .quotes {
+      text-align: center;
+    }
+
+    .quotes h2 {
+      font-size: 3rem;
+      color: #facc15;
+      margin-bottom: 50px;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .quote-list {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      font-size: 1.6rem;
+      color: #e5e7eb;
+    }
+
+    footer {
+      border-top: 1px solid rgba(168,85,247,0.2);
+      padding: 40px;
+      text-align: center;
+      color: #9ca3af;
+    }
+
+    .contract {
+      word-break: break-all;
+      color: #c084fc;
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+
+    @media(max-width:768px){
+      h1 {
+        font-size: 3.2rem;
+      }
+
+      .tagline {
+        font-size: 1.2rem;
+      }
+
+      .description {
+        font-size: 1rem;
+      }
+
+      .quote-list {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="glow"></div>
+
+    <div class="container hero">
+      <img src="logo.png" alt="CHADGPT Logo">
+
+      <h1>CHADGPT</h1>
+
+      <p class="tagline">
+        BUILT DIFFERENT. TRAINED HARDER.
+      </p>
+
+      <p class="description">
+        A jacked AI robot who gives terrible financial advice but somehow always moons.
+        CHADGPT doesn’t hallucinate — it manifests.
+        The AI coin that actually lifts. 🤖💪
+      </p>
+
+      <div class="buttons">
+        <a class="btn btn-primary" href="https://x.com/RealCHADGPT_SOL" target="_blank">
+          Follow on X
+        </a>
+
+        <a class="btn btn-secondary" href="https://trade.phantom.com/token/omKwMe8WugcrsXdn7ULkKRazpnHTCPdfS9rttWipump" target="_blank">
+          Buy CHADGPT
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="cards">
+
+        <div class="card">
+          <h2>AI POWER</h2>
+          <p>
+            Other AI predicts the market.
+            CHADGPT manifests it.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>GYM ENERGY</h2>
+          <p>
+            No paper hands.
+            Only gains.
+            Full port. Full pump.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>SOLANA MEME</h2>
+          <p>
+            Contract Address:
+          </p>
+
+          <div class="contract">
+            omKwMe8WugcrsXdn7ULkKRazpnHTCPdfS9rttWipump
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="quotes">
+    <div class="container">
+      <h2>CHADGPT WISDOM</h2>
+
+      <div class="quote-list">
+        <div>“Diversify? Weak mindset.”</div>
+        <div>“The dip is just pre-workout.”</div>
+        <div>“Worst financial advice. Best results.”</div>
+        <div>“Lift heavy. Manifest gains.”</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container" style="text-align:center;">
+      <h2 style="font-size:3rem;color:#c084fc;font-family:'Orbitron',sans-serif;">
+        JOIN THE CHADGPT ARMY 🚀
+      </h2>
+
+      <p style="margin-top:30px;color:#d1d5db;font-size:1.2rem;line-height:1.8;max-width:800px;margin-inline:auto;">
+        Meme. Engage. Grow. Dominate.
+        Become part of the strongest AI meme movement on Solana.
+      </p>
+
+      <div style="margin-top:50px;">
+        <a class="btn btn-secondary" href="https://x.com/RealCHADGPT_SOL" target="_blank">
+          JOIN NOW
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>CHADGPT © 2026</p>
+    <p>BUILT DIFFERENT. TRAINED HARDER.</p>
+  </footer>
+
+</body>
+</html>
