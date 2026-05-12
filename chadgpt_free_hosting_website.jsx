@@ -5,7 +5,7 @@ export default function ChadGPTWebsite() {
 
       <section className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-24">
         <img
-          src="https://i.imgur.com/Jm2tV7P.png"
+          src="https://github.com/ark61190/chadgpt/blob/main/chadgpt-logo.png?raw=true"
           alt="CHADGPT"
           className="w-56 h-56 rounded-full shadow-2xl border-4 border-purple-500"
         />
